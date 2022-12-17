@@ -1,0 +1,66 @@
+/**
+ * Cecilia Tong
+ * Final Project
+ * Dec 20, 2022
+ * Food Recipe Search
+ */
+html,
+body {
+	height: 100%;
+	width: auto;
+	background-image: url(background.jpeg);
+}
+
+.btn-primary {
+	background: #059649;
+	color: white;
+	height: 40px;
+	width: 80px;
+	font: bold15px arial, sans-serif;
+	text-shadow: none;
+	font-style: italic;
+}
+
+.btn-primary:hover {
+	background-color: #9b771c;
+	transition: 0.10s;
+}
+
+.col-12 {
+	list-style-position: relative;
+	left: 350px;
+	top: 20px;
+}
+
+.col-md-4 {
+	list-style-position: relative;
+	left: 350px;
+	top: -10px;
+}
+
+.column {
+	float: left;
+	width: 33.33%;
+	padding: 5px;
+
+}
+
+.row {
+	top: 40px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+	/* top: 40px; */
+}
+
+input:valid {
+	border: 1px solid lightseagreen
+}
+
+.invalid {
+	background-color: red;
+}
