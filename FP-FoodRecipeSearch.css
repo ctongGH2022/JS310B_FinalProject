@@ -1,0 +1,41 @@
+/**
+ * Cecilia Tong
+ * Final Project
+ * Dec 20, 2022
+ * Food Recipe Search
+ */
+
+input:valid {
+	border: 1px solid lightseagreen
+}
+
+input:invalid {
+	border: 1px solid tomato;
+}
+
+.invalid {
+	background-color: red;
+}
+
+h1 {
+	height: auto;
+	width: 230px;
+}
+
+html,
+body {
+	height: 100%;
+	width: auto;
+	background-color: rgb(154, 206, 223);
+}
+
+.btn-primary {
+	background: #0066A2;
+	color: white;
+	border-style: outset;
+	border-color: #0066A2;
+	height: 50px;
+	width: 100px;
+	font: bold15px arial, sans-serif;
+	text-shadow: none;
+}
