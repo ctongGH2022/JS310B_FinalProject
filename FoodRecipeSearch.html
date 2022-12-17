@@ -1,0 +1,58 @@
+<!--
+/**
+ * Cecilia Tong
+ * Final Project
+ * Dec 20, 2022
+ * Food Recipe Search
+ */
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Food Recipe Searching App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="FoodRecipeSearch.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="row my-4">
+      <div class="col-12">
+        <h1>Food Recipe Search</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <!-- <h2>Food Recipe Search</h2> -->
+        <form id="food-recipe-search-form">
+          <div class="form-group mb-2">
+            <label for="recipe"></label>
+            <input id="recipe" name="recipe" class="form-control" type="text" placeholder="enter recipe here..."
+              required />
+          </div>
+          <div class="form-group mb-2">
+            <input id="submit" class="btn btn-primary" type="submit" value="Search" />
+          </div>
+        </form>
+      </div>
+
+      <div class="row" id="recipes-container">
+        <!-- <div class="column" id="column"></div> -->
+      </div>
+    </div><!--end class row-->
+  </div> <!--end class container-->
+
+  <!-- <audio autoplay>
+    <source src="your-audio-file.wav" type="audio/wav" />
+    <audio src="MUSIC.mp3" autoplay loop></audio>
+  </audio> -->
+
+  <script src="FoodRecipeSearch.js?v=1"></script>
+</body>
+
+</html>
