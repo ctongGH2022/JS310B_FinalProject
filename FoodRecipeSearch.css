@@ -11,6 +11,46 @@ body {
 	background-image: url(background.jpeg);
 }
 
+/* .mb-2 {
+	float: right;
+} */
+
+.feedback-form {
+	list-style-position: relative;
+	left: 350px;
+	top: 10px;
+}
+
+.btn-send-feedback {
+	background: #059649;
+	color: white;
+	height: 40px;
+	width: 350px;
+	font: bold15px arial, sans-serif;
+	text-shadow: none;
+	font-style: italic;
+}
+
+.btn-send-feedback:hover {
+	background-color: #654f16;
+	transition: 0.10s;
+}
+
+.btn-want-feedback {
+	background: #059649;
+	color: white;
+	height: 40px;
+	width: 350px;
+	font: bold15px arial, sans-serif;
+	text-shadow: none;
+	font-style: italic;
+}
+
+.btn-want-feedback:hover {
+	background-color: #654f16;
+	transition: 0.10s;
+}
+
 .btn-primary {
 	background: #059649;
 	color: white;
@@ -22,30 +62,33 @@ body {
 }
 
 .btn-primary:hover {
-	background-color: #9b771c;
+	background-color: #654f16;
 	transition: 0.10s;
 }
 
 .col-12 {
+	/*headline*/
 	list-style-position: relative;
 	left: 350px;
 	top: 20px;
 }
 
 .col-md-4 {
+	/*input and button for search*/
 	list-style-position: relative;
 	left: 350px;
 	top: -10px;
 }
 
 .column {
+	/*list of recipes*/
 	float: left;
 	width: 33.33%;
 	padding: 5px;
-
 }
 
 .row {
+	/*list of recipes*/
 	top: 40px;
 }
 
@@ -54,13 +97,13 @@ body {
 	content: "";
 	clear: both;
 	display: table;
-	/* top: 40px; */
 }
 
 h6 {
 	color: rgb(6, 75, 6);
 	font-style: bold;
 }
+
 input:valid {
 	border: 1px solid lightseagreen
 }
