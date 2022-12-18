@@ -39,7 +39,7 @@ formEl.addEventListener('submit', async function (e) {
 
       //list recipes
       const listRecipes = responseJson.hits;
-      if (listRecipes.length == 0){
+      if (listRecipes.length == 0) {
         alert("No recipe found!");
       }
 
@@ -50,16 +50,18 @@ formEl.addEventListener('submit', async function (e) {
         const divElCol = document.createElement('div');
         divEl.appendChild(divElCol);
         divElCol.classList.add("column");
-
+        const recipeStr = listRecipes[i].recipe;
 
         const h6 = document.createElement('h6');
-        const h6Txt = document.createTextNode(`${i + 1}. ${listRecipes[i].recipe.label} (${listRecipes[i].recipe.cuisineType})`);
+        const h6Txt = document.createTextNode(`${i + 1}. ${recipeStr.label} 
+        (${recipeStr.cuisineType[0].charAt(0).toUpperCase() + recipeStr.cuisineType[0].slice(1)}, 
+        ${recipeStr.mealType[0]})`);
         h6.appendChild(h6Txt);
         divElCol.appendChild(h6);
 
         //create text for cuisine type and cal info
         const h6El = document.createElement('h6');
-        const h6Text = document.createTextNode(`Calories: ${listRecipes[i].recipe.calories.toFixed(2)}`);
+        const h6Text = document.createTextNode(`Calories: ${recipeStr.calories.toFixed(2)}`);
         h6El.appendChild(h6Text);
         divElCol.appendChild(h6El);
 
@@ -67,24 +69,26 @@ formEl.addEventListener('submit', async function (e) {
         const aEl = document.createElement('a');
         const aElText = document.createTextNode(`View recipe`);
         aEl.appendChild(aElText);
-        aEl.href = `${listRecipes[i].recipe.url}`;
+        aEl.href = `${recipeStr.url}`;
         aEl.style.color = 'blue';
         aEl.style.fontSize = 'large';
         aEl.style.fontStyle = 'italic'
         divElCol.appendChild(aEl);
 
+        //to open recipe in a new window and keep search result to display
+        aEl.addEventListener('click', (e)=> {
+          e.preventDefault();
+          window.open(`${recipeStr.url}`);
+        })
+
         //create image and display image for book
         const imageEl = document.createElement('img');
-        imageEl.src = listRecipes[i].recipe.image;
+        imageEl.src = recipeStr.image;
         imageEl.width = 300;
         imageEl.height = 300;
-        imageEl.alt = listRecipes[i].recipe.label;
-        imageEl.style.width = 100%
-        divElCol.appendChild(imageEl); // add new <p> to <div>
-
-        // //create newline
-        // const brEl = document.createElement('br')
-        // divEl.appendChild(brEl);
+        imageEl.alt = recipeStr.label;
+        imageEl.style.width = 100 %
+          divElCol.appendChild(imageEl); // add new <p> to <div>
       } //end for loop (i)    
     }); //end fetch  
 }); //end form
