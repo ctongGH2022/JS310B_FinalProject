@@ -11,10 +11,6 @@ body {
 	background-image: url(background.jpeg);
 }
 
-/* .mb-2 {
-	float: right;
-} */
-
 .feedback-form {
 	list-style-position: relative;
 	left: 350px;
@@ -27,7 +23,7 @@ body {
 	height: 40px;
 	width: 350px;
 	font: bold15px arial, sans-serif;
-	text-shadow: none;
+	/* text-shadow: none; */
 	font-style: italic;
 }
 
@@ -37,17 +33,22 @@ body {
 }
 
 .btn-want-feedback {
-	background: #059649;
-	color: white;
+	/* background: #485b02; */
+	/* background-color: #654f16; */
+	background: #654f16;
+	color: black;
 	height: 40px;
 	width: 350px;
 	font: bold15px arial, sans-serif;
-	text-shadow: none;
+	/* text-shadow: none; */
 	font-style: italic;
+	margin: 2% 0;
 }
 
 .btn-want-feedback:hover {
-	background-color: #654f16;
+	background-color: #485b02;
+	/* background: #485b02; */
+	/* background-color: #654f16; */
 	transition: 0.10s;
 }
 
@@ -55,9 +56,9 @@ body {
 	background: #059649;
 	color: white;
 	height: 40px;
-	width: 80px;
+	width: 350px;
 	font: bold15px arial, sans-serif;
-	text-shadow: none;
+	/* text-shadow: none; */
 	font-style: italic;
 }
 
@@ -65,6 +66,16 @@ body {
 	background-color: #654f16;
 	transition: 0.10s;
 }
+
+.form-control {
+	display: block;
+	/* border: #654f16; */
+	border-color:#654f16;
+	padding: auto;
+	background-color: #e3decf;
+	margin: 2% 0;
+	height: 40px;
+  }
 
 .col-12 {
 	/*headline*/
@@ -107,7 +118,7 @@ h6 {
 input:valid {
 	border: 1px solid lightseagreen
 }
-
+/* 
 .invalid {
 	background-color: red;
-}
+} */
