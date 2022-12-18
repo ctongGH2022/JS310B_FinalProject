@@ -57,6 +57,10 @@ body {
 	/* top: 40px; */
 }
 
+h6 {
+	color: rgb(6, 75, 6);
+	font-style: bold;
+}
 input:valid {
 	border: 1px solid lightseagreen
 }
