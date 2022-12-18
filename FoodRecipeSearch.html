@@ -19,32 +19,47 @@
 
 <body>
   <div class="container">
-
     <div class="row my-4">
       <div class="col-12">
         <h1>Food Recipe Search</h1>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-4">
         <form id="food-recipe-search-form">
-          <div class="form-group mb-2">
+          <div class="form-group mb-1">
             <label for="recipe"></label>
             <input id="recipe" name="recipe" class="form-control" type="text" placeholder="enter recipe here..."
               required />
           </div>
-          <div class="form-group mb-2">
+          <div class="form-group mb-1">
             <input id="submit" class="btn btn-primary" type="submit" value="Search" />
           </div>
         </form>
+        <form id="want-feedback-form">
+          <div class="form-group mb-2">
+            <input id="wantFB" class="btn btn-want-feedback" type="submit" value="Feedback?" />
+          </div>
+        </form>
+        <form novalidate id="send-feedback-form" action="">
+          <div class="form-group mb-2">
+            <label for="email"></label>
+            <input id="email" name="email" class="form-control validate-input" type="text" style="display: none"
+              placeholder="enter email here..." required />
+            <label for="message"></label>
+            <textarea id="message" class="form-control validate-input" name="message" rows="2" cols="10"
+              placeholder="Your feedback here..." style="height:150px" hidden="hidden" required></textarea>
+          </div>
+          <div class="form-group mb-2">
+            <input id="sendFB" class="btn btn-send-feedback" type="submit" value="Send Feedback" hidden />
+          </div>
+        </form>
       </div>
-
       <div class="row" id="recipes-container">
       </div>
-    </div><!--end class row-->
-  </div> <!--end class container-->
-  
+    </div>
+  </div>
+
   <script src="FoodRecipeSearch.js"></script>
 </body>
 
