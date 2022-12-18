@@ -5,6 +5,48 @@
  * Food Recipe Search
  */
 
+
+
+
+/********************************************************************
+* Function to display timer and will auto refresh page after certain time
+*********************************************************************/
+function myTimer() {
+  const d = new Date();
+  document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+}
+
+//setInterval(myTimer, 10); //to start the clock, call myTimer ever 10ms
+//setTimeout(myTimer,10); //fix number
+
+//setTimeout(autoReload, 5000); //auto reload after 5s
+
+function autoReload() {
+  location.reload(true);  
+}
+
+//myInterval = setInterval(setColor, 500);
+
+//background-image: url(background.jpeg);
+ 
+function setBGImage() {
+  let x = document.body;
+  //x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
+  x.style.backgroundImage = x.style.backgroundImage == "background.jpeg" ? "background.jpg" : "background.jpeg";
+
+}
+
+
+
+
+
+
+
+/********************************************************************
+* Food Recipe Searching
+* Using Edamam Recipe Search API
+* Allows up to 20 recipes each search
+*********************************************************************/
 //these are for searching recipe
 const formSearch = document.getElementById('food-recipe-search-form');
 const recipeEl = document.getElementById('recipe');
@@ -37,7 +79,7 @@ formSearch.addEventListener('submit', async function (e) {
     history.go(0);
   })
 
-  //start FETCH
+  //start FETCH for food recipes
   fetch(url)
     .then(function (data) {
       return data.json();
@@ -45,12 +87,19 @@ formSearch.addEventListener('submit', async function (e) {
     .then(function (responseJson) {
       console.log(responseJson);
 
-      //display recipes
+      //display alart if no recipes found
       const listRecipes = responseJson.hits;
       if (listRecipes.length == 0) {
         alert("No recipe found!");
       }
 
+// //hide feedback fields while searching for recipe
+// emailFB.style.display = 'none';
+// messageFB.setAttribute("hidden", "hidden");
+// sendFB.setAttribute("hidden", "hidden");
+// wantFBForm.removeAttribute('hidden');
+
+      //display recipes
       for (let i = 0; i < listRecipes.length; i++) {
         const recipeStr = listRecipes[i].recipe; //recipe
         const divEl = document.getElementById('recipes-container');//referance <div> for row 
@@ -109,9 +158,9 @@ formSearch.addEventListener('submit', async function (e) {
 }); //end form
 
 /********************************************************************
-     * Function checkStrLen()
-     * @param {event,String,number} e, string, minLen
-     * function to check string length (for feedback message)
+* Function checkStrLen()
+* @param {event,String,number} e, string, minLen
+* function to check string length (for feedback message)
 *********************************************************************/
 function checkStrLen(e, string, minLen) {
   let allValid = false;
@@ -158,20 +207,29 @@ function checkEmail(e) {
   }
 } //end function checkEmail(e)
 
+/********************************************************************
+* if user wants to send feed back, click the 'feedback?' button to 
+* get fields for feeback
+*********************************************************************/
 //if user wants to send feed back, click the 'feedback?' button to get fields for feeback
 wantFBForm.addEventListener('submit', (e) => {
-  e.preventDefault();
   //display fields for feedback
+  e.preventDefault();
   emailFB.style.display = 'block';
   messageFB.removeAttribute('hidden');
   sendFBButton.removeAttribute('hidden');
   wantFBForm.setAttribute("hidden", "hidden"); //hide 'feedbaack?' button
 })
 
-//click the 'send feedback' button
+/********************************************************************
+* To send feedback with email and message. There are function 
+* checkEmail(e) to validate email and checkStrLen(e, messageFB, 10) 
+* to validate message string
+*********************************************************************/
 sendFBForm.addEventListener('submit', (e) => {
   checkEmail(e);
   sendFBForm.reportValidity();
   checkStrLen(e, messageFB, 10);
   sendFBForm.reportValidity();
 });
+
