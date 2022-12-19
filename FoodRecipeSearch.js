@@ -7,7 +7,7 @@
 
 /********************************************************************
 * Functions using Timing Functions to change styles, and to display
-* clock
+* clock on page
 *********************************************************************/
 function changeStyle() {
   const header = document.getElementById('header');
@@ -16,11 +16,10 @@ function changeStyle() {
 
 function myTimer() {
   const d = new Date();
-  const d1 = d.toUTCString();// changing the display to UTC string
-  document.getElementById("timer").innerHTML = `___${d1}___`;
+  const d1 = d.toLocaleString();// changing the display to UTC string
+  document.getElementById("timer").innerHTML = `______ ${d1} ______`;
   setTimeout(myTimer, 1000); //to start the clock, call myTimer ever 10ms
 }
-
 setTimeout(myTimer, 10); //to start the clock, call myTimer ever 10ms
 
 /********************************************************************
