@@ -5,42 +5,23 @@
  * Food Recipe Search
  */
 
-
-
-
 /********************************************************************
-* Function to display timer and will auto refresh page after certain time
+* Functions using Timing Functions to change styles, and to display
+* clock
 *********************************************************************/
+function changeStyle() {
+  const header = document.getElementById('header');
+  setInterval(function () { header.style.color = (header.style.color == "black" ? "green" : "black") }, 500);
+}
+
 function myTimer() {
   const d = new Date();
-  document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+  const d1 = d.toUTCString();// changing the display to UTC string
+  document.getElementById("timer").innerHTML = `___${d1}___`;
+  setTimeout(myTimer, 1000); //to start the clock, call myTimer ever 10ms
 }
 
-//setInterval(myTimer, 10); //to start the clock, call myTimer ever 10ms
-//setTimeout(myTimer,10); //fix number
-
-//setTimeout(autoReload, 5000); //auto reload after 5s
-
-function autoReload() {
-  location.reload(true);  
-}
-
-//myInterval = setInterval(setColor, 500);
-
-//background-image: url(background.jpeg);
- 
-function setBGImage() {
-  let x = document.body;
-  //x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
-  x.style.backgroundImage = x.style.backgroundImage == "background.jpeg" ? "background.jpg" : "background.jpeg";
-
-}
-
-
-
-
-
-
+setTimeout(myTimer, 10); //to start the clock, call myTimer ever 10ms
 
 /********************************************************************
 * Food Recipe Searching
@@ -92,12 +73,6 @@ formSearch.addEventListener('submit', async function (e) {
       if (listRecipes.length == 0) {
         alert("No recipe found!");
       }
-
-// //hide feedback fields while searching for recipe
-// emailFB.style.display = 'none';
-// messageFB.setAttribute("hidden", "hidden");
-// sendFB.setAttribute("hidden", "hidden");
-// wantFBForm.removeAttribute('hidden');
 
       //display recipes
       for (let i = 0; i < listRecipes.length; i++) {
@@ -232,4 +207,3 @@ sendFBForm.addEventListener('submit', (e) => {
   checkStrLen(e, messageFB, 10);
   sendFBForm.reportValidity();
 });
-
