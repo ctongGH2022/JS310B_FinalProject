@@ -17,12 +17,12 @@
   <link rel="stylesheet" href="FoodRecipeSearch.css" />
 </head>
 
-<body>
+<body onload="changeStyle()">
   <div class="container">
     <div class="row my-4">
       <div class="col-12">
-        <h1>Food Recipe Search</h1>
-        <!-- <h3 id="timer">Timer</h3> -->
+        <h1 id="header">* Food Recipe Search *</h1>
+        <h4 id="timer"></h4>
       </div>
     </div>
     <div class="row">
@@ -34,7 +34,7 @@
               required />
           </div>
           <div class="form-group mb-1">
-            <input id="submit" class="btn btn-primary" type="submit" value="Search" />
+            <input id="submit" class="btn btn-primary" type="submit" value="Search" onload="blinkElement()" />
           </div>
         </form>
         <form id="want-feedback-form">
@@ -61,7 +61,14 @@
     </div>
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="FoodRecipeSearch.js"></script>
+
+  <audio controls autoplay loop>
+    <source src="Sing.mp3" type="audio/mpeg">
+  </audio>
+
 </body>
 
 </html>
