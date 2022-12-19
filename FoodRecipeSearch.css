@@ -12,67 +12,22 @@ body {
 	background-image: url(background.jpeg);
 }
 
-.feedback-form {
+/*app header*/
+.col-12 {
 	list-style-position: relative;
-	left: 350px;
-	top: 10px;
-}
-
-.btn-send-feedback {
-	background: #059649;
-	color: white;
-	height: 40px;
-	width: 350px;
-	font: bold15px arial, sans-serif;
-	font-style: italic;
-}
-
-.btn-send-feedback:hover {
-	background-color: #654f16;
-	transition: 0.10s;
-}
-
-.btn-want-feedback {
-	background: #797366;
-	color: black;
-	height: 40px;
-	width: 350px;
-	font: bold15px arial, sans-serif;
-	font-style: italic;
-	margin: 2% 0;
-}
-
-.btn-want-feedback:hover {
-	background-color: #654f16;
-	transition: 0.10s;
-}
-
-/* search button */
-.btn-primary {
-	background: #025428;
-	color: white;
-	height: 40px;
-	width: 350px;
-	font: bold15px arial, sans-serif;
-	font-style: italic;
-}
-
-/* search button */
-.btn-primary:hover {
-	background-color: #654f16;
-	transition: 0.10s;
+	left: 320px;
+	top: 20px;
 }
 
 /* search form */
 .form-control {
-	display: block;
 	border-color: #654f16;
 	border-width: medium;
 	padding: auto;
 	background-color: #e3decf;
 	margin: 2% 0;
 	height: 40px;
-	font-weight:500;	
+	font-weight: 500;
 }
 
 /* search form */
@@ -81,14 +36,7 @@ body {
 	transition: 0.10s;
 }
 
-/*app header*/
-.col-12 {
-	list-style-position: relative;
-	left: 320px;
-	top: 20px;
-}
-
-/*input and button for search*/
+/*inputs and buttons*/
 .col-md-4 {
 	list-style-position: relative;
 	left: 350px;
@@ -117,6 +65,57 @@ body {
 h6 {
 	color: rgb(6, 75, 6);
 	font-style: bold;
+}
+
+/* search button */
+.btn-primary {
+	background: #025428;
+	color: white;
+	height: 40px;
+	width: 350px;
+	font: bold15px arial, sans-serif;
+	font-style: italic;
+}
+
+/* search button */
+.btn-primary:hover {
+	background-color: #654f16;
+	transition: 0.10s;
+}
+
+.btn-want-feedback {
+	background: #797366;
+	color: black;
+	height: 40px;
+	width: 350px;
+	font: bold15px arial, sans-serif;
+	font-style: italic;
+	margin: 2% 0;
+}
+
+.btn-want-feedback:hover {
+	background-color: #654f16;
+	transition: 0.10s;
+}
+
+.feedback-form {
+	list-style-position: relative;
+	left: 350px;
+	top: 10px;
+}
+
+.btn-send-feedback {
+	background: #059649;
+	color: white;
+	height: 40px;
+	width: 350px;
+	font: bold15px arial, sans-serif;
+	font-style: italic;
+}
+
+.btn-send-feedback:hover {
+	background-color: #654f16;
+	transition: 0.10s;
 }
 
 input:valid {
