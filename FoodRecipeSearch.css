@@ -4,6 +4,7 @@
  * Dec 20, 2022
  * Food Recipe Search
  */
+
 html,
 body {
 	height: 100%;
@@ -23,7 +24,6 @@ body {
 	height: 40px;
 	width: 350px;
 	font: bold15px arial, sans-serif;
-	/* text-shadow: none; */
 	font-style: italic;
 }
 
@@ -33,73 +33,77 @@ body {
 }
 
 .btn-want-feedback {
-	/* background: #485b02; */
-	/* background-color: #654f16; */
-	background: #654f16;
+	background: #797366;
 	color: black;
 	height: 40px;
 	width: 350px;
 	font: bold15px arial, sans-serif;
-	/* text-shadow: none; */
 	font-style: italic;
 	margin: 2% 0;
 }
 
 .btn-want-feedback:hover {
-	background-color: #485b02;
-	/* background: #485b02; */
-	/* background-color: #654f16; */
+	background-color: #654f16;
 	transition: 0.10s;
 }
 
+/* search button */
 .btn-primary {
-	background: #059649;
+	background: #025428;
 	color: white;
 	height: 40px;
 	width: 350px;
 	font: bold15px arial, sans-serif;
-	/* text-shadow: none; */
 	font-style: italic;
 }
 
+/* search button */
 .btn-primary:hover {
 	background-color: #654f16;
 	transition: 0.10s;
 }
 
+/* search form */
 .form-control {
 	display: block;
-	/* border: #654f16; */
-	border-color:#654f16;
+	border-color: #654f16;
+	border-width: medium;
 	padding: auto;
 	background-color: #e3decf;
 	margin: 2% 0;
 	height: 40px;
-  }
+	font-weight:500;	
+}
 
+/* search form */
+.form-control:hover {
+	background-color: #ebb938;
+	transition: 0.10s;
+}
+
+/*app header*/
 .col-12 {
-	/*headline*/
 	list-style-position: relative;
-	left: 350px;
+	left: 320px;
 	top: 20px;
 }
 
+/*input and button for search*/
 .col-md-4 {
-	/*input and button for search*/
 	list-style-position: relative;
 	left: 350px;
 	top: -10px;
 }
 
+/*list of recipes*/
 .column {
-	/*list of recipes*/
 	float: left;
 	width: 33.33%;
 	padding: 5px;
 }
 
+/*list of recipes*/
 .row {
-	/*list of recipes*/
 	top: 40px;
 }
 
@@ -118,7 +122,3 @@ h6 {
 input:valid {
 	border: 1px solid lightseagreen
 }
-/* 
-.invalid {
-	background-color: red;
-} */
