@@ -6,25 +6,28 @@
  */
 
 /********************************************************************
-* Functions using Timing Functions to change styles, and to display
-* clock
+* Functions using TIMING FUNCTIONS to change styles, and to display
+* clock on page
 *********************************************************************/
+//blinking Food Recipe Search header whenever page loaded
 function changeStyle() {
   const header = document.getElementById('header');
   setInterval(function () { header.style.color = (header.style.color == "black" ? "green" : "black") }, 500);
 }
 
+//display the clock
 function myTimer() {
   const d = new Date();
-  const d1 = d.toUTCString();// changing the display to UTC string
-  document.getElementById("timer").innerHTML = `___${d1}___`;
+  const d1 = d.toLocaleString();// changing the display to UTC string
+  document.getElementById("timer").innerHTML = `______ ${d1} ______`;
   setTimeout(myTimer, 1000); //to start the clock, call myTimer ever 10ms
 }
 
-setTimeout(myTimer, 10); //to start the clock, call myTimer ever 10ms
+//to start the clock, call myTimer ever 10ms
+setTimeout(myTimer, 10);
 
 /********************************************************************
-* Food Recipe Searching
+* Food Recipe Searching - FETCH
 * Using Edamam Recipe Search API
 * Allows up to 20 recipes each search
 *********************************************************************/
@@ -42,7 +45,7 @@ const sendFBButton = document.getElementById('sendFB');
 //submit recipe to start searching
 formSearch.addEventListener('submit', async function (e) {
   e.preventDefault();
-  const recipe = recipeEl.value;
+  const recipe = recipeEl.value; //input for searching
 
   // Fetch food recipe search
   const BASE_URL = 'https://api.edamam.com/api/recipes/v2'; //Edamam recipe link
@@ -84,37 +87,37 @@ formSearch.addEventListener('submit', async function (e) {
         divEl.appendChild(divElCol);
         divElCol.classList.add("column");
 
-        //info for cuisine and mealtype
-        const h6 = document.createElement('h6');
-        const h6Txt = document.createTextNode(`${i + 1}. ${recipeStr.label} 
+        //create text for cuisine and mealtype info
+        const cuisineType = document.createElement('h6');
+        const cuisineTypeTxt = document.createTextNode(`${i + 1}. ${recipeStr.label} 
         (${recipeStr.cuisineType[0].charAt(0).toUpperCase() + recipeStr.cuisineType[0].slice(1)}, 
         ${recipeStr.mealType[0]})`);
-        h6.appendChild(h6Txt);
-        divElCol.appendChild(h6);
+        cuisineType.appendChild(cuisineTypeTxt);
+        divElCol.appendChild(cuisineType);
 
-        //create text for cuisine type and cal info
-        const h6El = document.createElement('h6');
-        const h6Text = document.createTextNode(`Calories: ${recipeStr.calories.toFixed(2)}`);
-        h6El.appendChild(h6Text);
-        divElCol.appendChild(h6El);
+        //create text for cuisine cal info
+        const recipeCal = document.createElement('h6');
+        const recipeCalText = document.createTextNode(`Calories: ${recipeStr.calories.toFixed(2)}`);
+        recipeCal.appendChild(recipeCalText);
+        divElCol.appendChild(recipeCal);
 
-        //create link to recipe
+        //create link to view recipe
         const aEl = document.createElement('a');
         const aElText = document.createTextNode(`View recipe`);
-        aEl.appendChild(aElText);
         aEl.href = `${recipeStr.url}`;
         aEl.style.color = 'blue';
         aEl.style.fontSize = 'large';
-        aEl.style.fontStyle = 'italic'
+        aEl.style.fontStyle = 'italic';
+        aEl.appendChild(aElText);
         divElCol.appendChild(aEl);
 
-        //to open recipe in a new window and keep search result to display
+        //open recipe in a new window and keep results displaying
         aEl.addEventListener('click', (e) => {
           e.preventDefault();
           window.open(`${recipeStr.url}`);
         })
 
-        //create image and display image for recipe
+        //create image and display image for recipes
         const imageEl = document.createElement('img');
         imageEl.src = recipeStr.image;
         imageEl.width = 300;
@@ -135,7 +138,7 @@ formSearch.addEventListener('submit', async function (e) {
 /********************************************************************
 * Function checkStrLen()
 * @param {event,String,number} e, string, minLen
-* function to check string length (for feedback message)
+* function to check string length for feedback message
 *********************************************************************/
 function checkStrLen(e, string, minLen) {
   let allValid = false;
@@ -160,7 +163,8 @@ function checkStrLen(e, string, minLen) {
 /********************************************************************
 * Function checkEmail(e)
 * @param {event} e
-* fucntion to check email (basic format regEx = /\w+@\w+\.\w+/;)
+* fucntion to check email for feedback 
+* (basic format regEx = /\w+@\w+\.\w+/;)
 *********************************************************************/
 function checkEmail(e) {
   let allValid = false;
@@ -183,7 +187,7 @@ function checkEmail(e) {
 } //end function checkEmail(e)
 
 /********************************************************************
-* if user wants to send feed back, click the 'feedback?' button to 
+* if user wants to send feedback, click the 'feedback?' button to 
 * get fields for feeback
 *********************************************************************/
 //if user wants to send feed back, click the 'feedback?' button to get fields for feeback
@@ -197,7 +201,7 @@ wantFBForm.addEventListener('submit', (e) => {
 })
 
 /********************************************************************
-* To send feedback with email and message. There are function 
+* Send feedback with email and message. There are function 
 * checkEmail(e) to validate email and checkStrLen(e, messageFB, 10) 
 * to validate message string
 *********************************************************************/
